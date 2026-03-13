@@ -1,6 +1,6 @@
 {
 	"name": "@natiwo/spectrum-mcp",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "MCP server for Spectrum semantic memory. Connect Claude, Gemini, Codex to persistent memory.",
 	"license": "MIT",
 	"type": "module",
