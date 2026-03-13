@@ -1,0 +1,55 @@
+{
+	"name": "@natiwo/spectrum",
+	"version": "0.1.0",
+	"description": "Semantic memory for AI agents. Local-first, SQLite, embeddings, MCP-ready.",
+	"license": "MIT",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		}
+	},
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"files": ["dist", "README.md", "LICENSE"],
+	"sideEffects": false,
+	"keywords": [
+		"ai",
+		"memory",
+		"semantic-search",
+		"embeddings",
+		"mcp",
+		"sqlite",
+		"llm",
+		"context",
+		"claude",
+		"gemini",
+		"codex",
+		"neurodiversity"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Natiwo/spectrum",
+		"directory": "packages/core"
+	},
+	"publishConfig": { "access": "public" },
+	"scripts": {
+		"build": "tsdown",
+		"test": "vitest run",
+		"lint": "biome check src/",
+		"format": "biome format --write src/",
+		"typecheck": "tsc --noEmit"
+	},
+	"dependencies": {
+		"better-sqlite3": "^11.0.0"
+	},
+	"optionalDependencies": {
+		"@huggingface/transformers": "^3.0.0"
+	},
+	"devDependencies": {
+		"@types/better-sqlite3": "^7.6.0"
+	}
+}

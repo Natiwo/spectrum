@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440">
+  <defs>
+    <marker id="arr2" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 6 2.5, 0 5" fill="#555" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="880" height="440" fill="#111" rx="8" />
+
+  <!-- Title -->
+  <text x="440" y="32" font-family="'IBM Plex Mono', 'SF Mono', monospace" font-size="13" fill="#888" text-anchor="middle" letter-spacing="3">BUSCA SEMÂNTICA</text>
+
+  <!-- ══════ STEP 1 ══════ -->
+  <text x="40" y="68" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#7c3aed" letter-spacing="1">1. SALVAR</text>
+
+  <!-- Input text -->
+  <rect x="40" y="78" width="310" height="36" rx="3" fill="#1a1a1a" stroke="#333" stroke-width="1" />
+  <text x="52" y="101" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#ccc">"Escolhemos PostgreSQL por ACID"</text>
+
+  <!-- Arrow -->
+  <line x1="350" y1="96" x2="395" y2="96" stroke="#444" stroke-width="1" marker-end="url(#arr2)" />
+
+  <!-- Model -->
+  <rect x="400" y="78" width="170" height="36" rx="3" fill="#1a1a1a" stroke="#7c3aed" stroke-width="1" />
+  <text x="485" y="95" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#a78bfa" text-anchor="middle">all-MiniLM-L6-v2</text>
+  <text x="485" y="108" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#555" text-anchor="middle">384 dimensões</text>
+
+  <!-- Arrow -->
+  <line x1="570" y1="96" x2="615" y2="96" stroke="#444" stroke-width="1" marker-end="url(#arr2)" />
+
+  <!-- Vector output -->
+  <rect x="620" y="78" width="220" height="36" rx="3" fill="#1a1a1a" stroke="#333" stroke-width="1" />
+  <text x="730" y="98" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#888" text-anchor="middle">[0.023, -0.041, ... ] x384</text>
+
+  <!-- ══════ STEP 2: Vector Space ══════ -->
+  <text x="40" y="148" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#7c3aed" letter-spacing="1">2. ESPAÇO VETORIAL</text>
+
+  <rect x="40" y="158" width="800" height="145" rx="4" fill="#0d0d0d" stroke="#222" stroke-width="1" />
+
+  <!-- Axes (subtle) -->
+  <line x1="65" y1="285" x2="810" y2="285" stroke="#222" stroke-width="0.5" />
+  <line x1="65" y1="285" x2="65" y2="168" stroke="#222" stroke-width="0.5" />
+
+  <!-- Cluster: database memories (close together) -->
+  <circle cx="240" cy="210" r="5" fill="#7c3aed" opacity="0.8" />
+  <text x="255" y="208" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#999">"Escolhemos PostgreSQL por ACID"</text>
+
+  <circle cx="270" cy="235" r="4" fill="#7c3aed" opacity="0.5" />
+  <text x="285" y="238" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#666">"Banco é relacional"</text>
+
+  <circle cx="220" cy="245" r="3" fill="#7c3aed" opacity="0.4" />
+  <text x="120" y="255" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#666">"SQL ao invés de NoSQL"</text>
+
+  <!-- Distant memories -->
+  <circle cx="600" cy="270" r="3" fill="#444" opacity="0.5" />
+  <text x="613" y="273" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#444">"Deploy usa Docker"</text>
+
+  <circle cx="680" cy="195" r="3" fill="#444" opacity="0.4" />
+  <text x="693" y="198" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#444">"Frontend usa React"</text>
+
+  <circle cx="500" cy="275" r="2.5" fill="#444" opacity="0.3" />
+  <text x="513" y="278" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#333">"Testes com vitest"</text>
+
+  <circle cx="140" cy="275" r="2.5" fill="#444" opacity="0.3" />
+  <text x="100" y="278" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#333">"Redis pra cache"</text>
+
+  <!-- Legend -->
+  <circle cx="640" cy="175" r="3" fill="#7c3aed" opacity="0.7" />
+  <text x="650" y="178" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#666">significado similar = perto</text>
+
+  <circle cx="640" cy="190" r="3" fill="#444" opacity="0.4" />
+  <text x="650" y="193" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#444">significado diferente = longe</text>
+
+  <!-- ══════ STEP 3: Search ══════ -->
+  <text x="40" y="332" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#7c3aed" letter-spacing="1">3. BUSCAR POR SIGNIFICADO</text>
+
+  <!-- Query -->
+  <rect x="40" y="344" width="290" height="36" rx="3" fill="#1a1a1a" stroke="#333" stroke-width="1" />
+  <text x="52" y="360" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#555">busca:</text>
+  <text x="98" y="360" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#ccc">"qual banco escolhemos?"</text>
+  <text x="52" y="374" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#444">palavras diferentes, mesmo significado</text>
+
+  <!-- Arrow -->
+  <line x1="330" y1="362" x2="385" y2="362" stroke="#444" stroke-width="1" marker-end="url(#arr2)" />
+
+  <!-- Cosine sim -->
+  <rect x="390" y="344" width="170" height="36" rx="3" fill="#1a1a1a" stroke="#333" stroke-width="1" />
+  <text x="475" y="362" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#888" text-anchor="middle">similaridade cosseno</text>
+  <text x="475" y="374" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#444" text-anchor="middle">compara vetores</text>
+
+  <!-- Arrow -->
+  <line x1="560" y1="362" x2="605" y2="362" stroke="#444" stroke-width="1" marker-end="url(#arr2)" />
+
+  <!-- Result -->
+  <rect x="610" y="344" width="230" height="42" rx="3" fill="#1a1a1a" stroke="#7c3aed" stroke-width="1" />
+  <text x="622" y="360" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#7c3aed">score: 0.92</text>
+  <text x="622" y="374" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#ccc">"Escolhemos PostgreSQL por ACID"</text>
+
+  <!-- Footer -->
+  <text x="440" y="420" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#333" text-anchor="middle">encontra por significado, não por palavras exatas</text>
+</svg>

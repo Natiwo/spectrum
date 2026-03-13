@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 460" width="880" height="460">
+  <defs>
+    <marker id="arr" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 6 2.5, 0 5" fill="#555" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="880" height="460" fill="#111" rx="8" />
+
+  <!-- Title -->
+  <text x="440" y="32" font-family="'IBM Plex Mono', 'SF Mono', monospace" font-size="13" fill="#888" text-anchor="middle" letter-spacing="3">ARQUITETURA</text>
+
+  <!-- ── TOP: Entry points ── -->
+  <g font-family="'IBM Plex Mono', 'SF Mono', monospace">
+    <!-- Claude Code -->
+    <rect x="40" y="60" width="150" height="48" rx="4" fill="none" stroke="#444" stroke-width="1" />
+    <text x="115" y="82" font-size="12" fill="#ccc" text-anchor="middle">Claude Code</text>
+    <text x="115" y="98" font-size="9" fill="#666" text-anchor="middle">cliente mcp</text>
+
+    <!-- Gemini CLI -->
+    <rect x="220" y="60" width="150" height="48" rx="4" fill="none" stroke="#444" stroke-width="1" />
+    <text x="295" y="82" font-size="12" fill="#ccc" text-anchor="middle">Gemini CLI</text>
+    <text x="295" y="98" font-size="9" fill="#666" text-anchor="middle">cliente mcp</text>
+
+    <!-- Codex -->
+    <rect x="400" y="60" width="150" height="48" rx="4" fill="none" stroke="#444" stroke-width="1" />
+    <text x="475" y="82" font-size="12" fill="#ccc" text-anchor="middle">Codex</text>
+    <text x="475" y="98" font-size="9" fill="#666" text-anchor="middle">cliente mcp</text>
+
+    <!-- Sua App -->
+    <rect x="580" y="60" width="150" height="48" rx="4" fill="none" stroke="#444" stroke-width="1" stroke-dasharray="4,3" />
+    <text x="655" y="82" font-size="12" fill="#ccc" text-anchor="middle">Sua App</text>
+    <text x="655" y="98" font-size="9" fill="#666" text-anchor="middle">import direto</text>
+  </g>
+
+  <!-- Arrows top → MCP -->
+  <line x1="115" y1="108" x2="280" y2="152" stroke="#444" stroke-width="1" marker-end="url(#arr)" />
+  <line x1="295" y1="108" x2="340" y2="152" stroke="#444" stroke-width="1" marker-end="url(#arr)" />
+  <line x1="475" y1="108" x2="400" y2="152" stroke="#444" stroke-width="1" marker-end="url(#arr)" />
+  <line x1="655" y1="108" x2="550" y2="218" stroke="#444" stroke-width="1" marker-end="url(#arr)" />
+
+  <!-- ── MCP Server ── -->
+  <rect x="220" y="148" width="240" height="42" rx="4" fill="#1a1a1a" stroke="#7c3aed" stroke-width="1" />
+  <text x="340" y="168" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#a78bfa" text-anchor="middle">spectrum-mcp</text>
+  <text x="340" y="182" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#555" text-anchor="middle">servidor mcp (stdio / sse)</text>
+
+  <!-- Arrow MCP → Core -->
+  <line x1="340" y1="190" x2="420" y2="218" stroke="#444" stroke-width="1" marker-end="url(#arr)" />
+
+  <!-- ── CLI ── -->
+  <rect x="40" y="208" width="170" height="42" rx="4" fill="#1a1a1a" stroke="#444" stroke-width="1" />
+  <text x="125" y="228" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#ccc" text-anchor="middle">spectrum-cli</text>
+  <text x="125" y="242" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#555" text-anchor="middle">$ spm</text>
+
+  <!-- Arrow CLI → Core -->
+  <line x1="210" y1="229" x2="310" y2="239" stroke="#444" stroke-width="1" marker-end="url(#arr)" />
+
+  <!-- ── CORE ── -->
+  <rect x="315" y="215" width="520" height="55" rx="4" fill="#1a1a1a" stroke="#7c3aed" stroke-width="1.5" />
+  <text x="575" y="238" font-family="'IBM Plex Mono', monospace" font-size="14" fill="#e2e2e2" text-anchor="middle">@natiwo/spectrum</text>
+  <text x="575" y="258" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#666" text-anchor="middle">save  get  search  searchSemantic  list  delete  close</text>
+
+  <!-- Labels above bottom boxes -->
+  <text x="340" y="300" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#555" text-anchor="middle">StorageProvider</text>
+  <text x="690" y="300" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#555" text-anchor="middle">EmbeddingProvider</text>
+
+  <!-- Arrows Core → bottom -->
+  <line x1="460" y1="270" x2="340" y2="310" stroke="#444" stroke-width="1" marker-end="url(#arr)" />
+  <line x1="690" y1="270" x2="690" y2="310" stroke="#444" stroke-width="1" marker-end="url(#arr)" />
+
+  <!-- ── SQLite Storage ── -->
+  <rect x="180" y="310" width="320" height="100" rx="4" fill="#1a1a1a" stroke="#444" stroke-width="1" />
+  <text x="340" y="336" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#ccc" text-anchor="middle">SqliteStorage</text>
+  <line x1="200" y1="346" x2="480" y2="346" stroke="#333" stroke-width="0.5" />
+  <text x="200" y="366" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#666">~/.spectrum/spectrum.db</text>
+  <text x="200" y="382" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#555">modo WAL</text>
+  <text x="200" y="398" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#555">embeddings como BLOB (Float32Array)</text>
+
+  <!-- ── Embeddings ── -->
+  <rect x="540" y="310" width="300" height="100" rx="4" fill="#1a1a1a" stroke="#444" stroke-width="1" />
+  <text x="690" y="336" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#ccc" text-anchor="middle">LocalEmbeddingProvider</text>
+  <line x1="560" y1="346" x2="820" y2="346" stroke="#333" stroke-width="0.5" />
+  <text x="560" y="366" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#666">all-MiniLM-L6-v2</text>
+  <text x="560" y="382" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#555">384 dimensões, ONNX</text>
+  <text x="560" y="398" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#555">roda local, sem GPU</text>
+
+  <!-- ── Pluggable hint ── -->
+  <text x="440" y="440" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#444" text-anchor="middle">as duas interfaces são plugáveis -- traga seu próprio storage ou provider de embeddings</text>
+</svg>

@@ -1,0 +1,1 @@
+npx gitleaks protect --staged --verbose

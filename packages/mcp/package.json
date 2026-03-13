@@ -1,0 +1,47 @@
+{
+	"name": "@natiwo/spectrum-mcp",
+	"version": "0.1.0",
+	"description": "MCP server for Spectrum semantic memory. Connect Claude, Gemini, Codex to persistent memory.",
+	"license": "MIT",
+	"type": "module",
+	"bin": {
+		"spectrum-mcp": "./dist/server.js"
+	},
+	"files": [
+		"dist",
+		"README.md",
+		"LICENSE"
+	],
+	"keywords": [
+		"ai",
+		"memory",
+		"mcp",
+		"claude",
+		"gemini",
+		"codex",
+		"semantic-search"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Natiwo/spectrum",
+		"directory": "packages/mcp"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "tsdown",
+		"test": "vitest run",
+		"lint": "biome check src/",
+		"format": "biome format --write src/",
+		"typecheck": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@modelcontextprotocol/sdk": "^1.12.0",
+		"@natiwo/spectrum": "workspace:*",
+		"zod": "^3.24.0"
+	},
+	"devDependencies": {
+		"@types/node": "^25.5.0"
+	}
+}

@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0f23;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a1a3e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f0f23;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a78bfa;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:0.3" />
+      <stop offset="50%" style="stop-color:#a78bfa;stop-opacity:0.15" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:0" />
+    </linearGradient>
+    <filter id="blur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="40" />
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="420" fill="url(#bg)" />
+
+  <!-- Ambient glow spots -->
+  <circle cx="200" cy="210" r="180" fill="#7c3aed" opacity="0.06" filter="url(#blur)" />
+  <circle cx="800" cy="210" r="180" fill="#a78bfa" opacity="0.04" filter="url(#blur)" />
+
+  <!-- Grid pattern (subtle) -->
+  <g opacity="0.04" stroke="#a78bfa" stroke-width="0.5">
+    <line x1="0" y1="60" x2="1000" y2="60" />
+    <line x1="0" y1="120" x2="1000" y2="120" />
+    <line x1="0" y1="180" x2="1000" y2="180" />
+    <line x1="0" y1="240" x2="1000" y2="240" />
+    <line x1="0" y1="300" x2="1000" y2="300" />
+    <line x1="0" y1="360" x2="1000" y2="360" />
+    <line x1="100" y1="0" x2="100" y2="420" />
+    <line x1="200" y1="0" x2="200" y2="420" />
+    <line x1="300" y1="0" x2="300" y2="420" />
+    <line x1="400" y1="0" x2="400" y2="420" />
+    <line x1="500" y1="0" x2="500" y2="420" />
+    <line x1="600" y1="0" x2="600" y2="420" />
+    <line x1="700" y1="0" x2="700" y2="420" />
+    <line x1="800" y1="0" x2="800" y2="420" />
+    <line x1="900" y1="0" x2="900" y2="420" />
+  </g>
+
+  <!-- Floating memory nodes (left side) -->
+  <g opacity="0.5">
+    <!-- Node connections -->
+    <line x1="120" y1="130" x2="200" y2="200" stroke="#7c3aed" stroke-width="1" opacity="0.3" />
+    <line x1="200" y1="200" x2="160" y2="290" stroke="#7c3aed" stroke-width="1" opacity="0.3" />
+    <line x1="120" y1="130" x2="80" y2="240" stroke="#7c3aed" stroke-width="1" opacity="0.2" />
+    <line x1="80" y1="240" x2="160" y2="290" stroke="#7c3aed" stroke-width="1" opacity="0.2" />
+
+    <!-- Nodes -->
+    <circle cx="120" cy="130" r="4" fill="#7c3aed" />
+    <circle cx="120" cy="130" r="8" fill="none" stroke="#7c3aed" stroke-width="0.5" opacity="0.4" />
+    <circle cx="200" cy="200" r="5" fill="#a78bfa" />
+    <circle cx="200" cy="200" r="10" fill="none" stroke="#a78bfa" stroke-width="0.5" opacity="0.4" />
+    <circle cx="160" cy="290" r="3.5" fill="#7c3aed" />
+    <circle cx="160" cy="290" r="7" fill="none" stroke="#7c3aed" stroke-width="0.5" opacity="0.4" />
+    <circle cx="80" cy="240" r="3" fill="#a78bfa" opacity="0.7" />
+  </g>
+
+  <!-- Floating memory nodes (right side) -->
+  <g opacity="0.5">
+    <line x1="820" y1="140" x2="880" y2="220" stroke="#a78bfa" stroke-width="1" opacity="0.3" />
+    <line x1="880" y1="220" x2="850" y2="310" stroke="#a78bfa" stroke-width="1" opacity="0.3" />
+    <line x1="920" y1="170" x2="880" y2="220" stroke="#a78bfa" stroke-width="1" opacity="0.2" />
+
+    <circle cx="820" cy="140" r="3.5" fill="#a78bfa" />
+    <circle cx="880" cy="220" r="5" fill="#7c3aed" />
+    <circle cx="880" cy="220" r="10" fill="none" stroke="#7c3aed" stroke-width="0.5" opacity="0.4" />
+    <circle cx="850" cy="310" r="3" fill="#a78bfa" opacity="0.7" />
+    <circle cx="920" cy="170" r="4" fill="#7c3aed" opacity="0.6" />
+  </g>
+
+  <!-- Main title -->
+  <text x="500" y="155" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="72" font-weight="800" fill="white" text-anchor="middle" letter-spacing="-2">Spectrum</text>
+
+  <!-- Accent line -->
+  <rect x="400" y="175" width="200" height="2" rx="1" fill="url(#accent)" />
+
+  <!-- Subtitle -->
+  <text x="500" y="215" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="22" font-weight="400" fill="#a78bfa" text-anchor="middle" letter-spacing="1">Persistent Semantic Memory for AI</text>
+
+  <!-- Description -->
+  <text x="500" y="260" font-family="'SF Mono', 'Fira Code', 'Cascadia Code', monospace" font-size="14" fill="#8888aa" text-anchor="middle">SQLite  /  Embeddings 384D  /  MCP-ready  /  Local-first</text>
+
+  <!-- Bottom tag -->
+  <g transform="translate(500, 330)">
+    <rect x="-60" y="-14" width="120" height="28" rx="14" fill="none" stroke="#7c3aed" stroke-width="1" opacity="0.4" />
+    <text x="0" y="5" font-family="'SF Mono', 'Fira Code', monospace" font-size="12" fill="#a78bfa" text-anchor="middle" opacity="0.8">Open Source</text>
+  </g>
+
+  <!-- Natiwo -->
+  <text x="500" y="395" font-family="system-ui, sans-serif" font-size="13" fill="#555577" text-anchor="middle">natiwo.com.br</text>
+</svg>

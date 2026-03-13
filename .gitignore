@@ -1,0 +1,10 @@
+node_modules
+dist
+.turbo
+coverage
+*.db
+*.db-wal
+*.db-shm
+.env
+.env.*
+*.onnx
