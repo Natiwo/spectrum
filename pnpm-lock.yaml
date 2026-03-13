@@ -53,6 +53,10 @@ importers:
       '@natiwo/spectrum':
         specifier: workspace:*
         version: link:../core
+    devDependencies:
+      '@types/node':
+        specifier: ^25.5.0
+        version: 25.5.0
 
   packages/core:
     dependencies:
