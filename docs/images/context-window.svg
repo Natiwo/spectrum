@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400">
+  <defs>
+    <marker id="arr3" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 6 2.5, 0 5" fill="#555" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="880" height="400" fill="#111" rx="8" />
+
+  <!-- Title -->
+  <text x="440" y="32" font-family="'IBM Plex Mono', 'SF Mono', monospace" font-size="13" fill="#888" text-anchor="middle" letter-spacing="3">JANELA DE CONTEXTO</text>
+
+  <!-- SESSION 1 -->
+  <text x="40" y="68" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#7c3aed" letter-spacing="1">SESSAO 1</text>
+
+  <!-- Table/desk metaphor -->
+  <rect x="40" y="78" width="380" height="130" rx="4" fill="#1a1a1a" stroke="#333" stroke-width="1" />
+  <text x="230" y="98" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#555" text-anchor="middle">mesa de trabalho (128k tokens)</text>
+
+  <!-- Tokens filling up -->
+  <rect x="52" y="108" width="60" height="24" rx="2" fill="#7c3aed" opacity="0.7" />
+  <text x="82" y="124" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#fff" text-anchor="middle">projeto</text>
+
+  <rect x="118" y="108" width="55" height="24" rx="2" fill="#7c3aed" opacity="0.6" />
+  <text x="145" y="124" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#fff" text-anchor="middle">stack</text>
+
+  <rect x="179" y="108" width="65" height="24" rx="2" fill="#7c3aed" opacity="0.5" />
+  <text x="211" y="124" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#fff" text-anchor="middle">decisoes</text>
+
+  <rect x="250" y="108" width="70" height="24" rx="2" fill="#7c3aed" opacity="0.4" />
+  <text x="285" y="124" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#fff" text-anchor="middle">conversas</text>
+
+  <rect x="326" y="108" width="80" height="24" rx="2" fill="#7c3aed" opacity="0.3" />
+  <text x="366" y="124" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#ddd" text-anchor="middle">preferencias</text>
+
+  <rect x="52" y="138" width="90" height="24" rx="2" fill="#a78bfa" opacity="0.4" />
+  <text x="97" y="154" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#ddd" text-anchor="middle">codigo novo</text>
+
+  <rect x="148" y="138" width="100" height="24" rx="2" fill="#a78bfa" opacity="0.3" />
+  <text x="198" y="154" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#ddd" text-anchor="middle">debug + testes</text>
+
+  <rect x="254" y="138" width="80" height="24" rx="2" fill="#a78bfa" opacity="0.2" />
+  <text x="294" y="154" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#ccc" text-anchor="middle">3h de work</text>
+
+  <!-- Status -->
+  <text x="230" y="190" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#4ade80" text-anchor="middle">tudo na mesa, funcionando</text>
+
+  <!-- X mark: session ends -->
+  <text x="445" y="150" font-family="'IBM Plex Mono', monospace" font-size="28" fill="#ef4444" text-anchor="middle">X</text>
+  <text x="445" y="170" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#ef4444" text-anchor="middle">sessao acabou</text>
+
+  <!-- SESSION 2 -->
+  <text x="500" y="68" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#ef4444" letter-spacing="1">SESSAO 2</text>
+
+  <!-- Empty table -->
+  <rect x="500" y="78" width="340" height="130" rx="4" fill="#1a1a1a" stroke="#ef4444" stroke-width="1" stroke-dasharray="4,3" />
+  <text x="670" y="98" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#555" text-anchor="middle">mesa de trabalho (128k tokens)</text>
+
+  <!-- Empty state -->
+  <text x="670" y="148" font-family="'IBM Plex Mono', monospace" font-size="24" fill="#333" text-anchor="middle">vazio</text>
+  <text x="670" y="190" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#ef4444" text-anchor="middle">tudo perdido, comeca do zero</text>
+
+  <!-- ═══ BOTTOM: With Spectrum ═══ -->
+  <line x1="40" y1="225" x2="840" y2="225" stroke="#333" stroke-width="0.5" />
+  <text x="440" y="250" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#4ade80" text-anchor="middle" letter-spacing="1">COM SPECTRUM</text>
+
+  <!-- Session 1 with save -->
+  <rect x="40" y="262" width="240" height="50" rx="4" fill="#1a1a1a" stroke="#333" stroke-width="1" />
+  <text x="160" y="282" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#ccc" text-anchor="middle">Sessao 1: trabalha 3h</text>
+  <text x="160" y="300" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#555" text-anchor="middle">contexto, decisoes, progresso</text>
+
+  <!-- Arrow: save -->
+  <line x1="280" y1="287" x2="330" y2="287" stroke="#4ade80" stroke-width="1" marker-end="url(#arr3)" />
+  <text x="305" y="280" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#4ade80" text-anchor="middle">save</text>
+
+  <!-- Spectrum DB -->
+  <rect x="335" y="262" width="210" height="100" rx="4" fill="#1a1a1a" stroke="#7c3aed" stroke-width="1.5" />
+  <text x="440" y="284" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#a78bfa" text-anchor="middle">Spectrum</text>
+  <line x1="350" y1="292" x2="530" y2="292" stroke="#333" stroke-width="0.5" />
+  <text x="355" y="310" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#666">project:app/stack</text>
+  <text x="355" y="324" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#666">project:app/decisoes</text>
+  <text x="355" y="338" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#666">session/2026-03-13</text>
+  <text x="355" y="352" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#555">+ embeddings 384D</text>
+
+  <!-- Arrow: recall -->
+  <line x1="545" y1="287" x2="595" y2="287" stroke="#4ade80" stroke-width="1" marker-end="url(#arr3)" />
+  <text x="570" y="280" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#4ade80" text-anchor="middle">recall</text>
+
+  <!-- Session 2 with context -->
+  <rect x="600" y="262" width="240" height="50" rx="4" fill="#1a1a1a" stroke="#4ade80" stroke-width="1" />
+  <text x="720" y="282" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#ccc" text-anchor="middle">Sessao 2: continua de onde parou</text>
+  <text x="720" y="300" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#4ade80" text-anchor="middle">contexto recuperado automaticamente</text>
+
+  <!-- Footer -->
+  <text x="440" y="388" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#444" text-anchor="middle">a mesa limpa entre sessoes -- Spectrum e o caderno que fica na gaveta</text>
+</svg>
