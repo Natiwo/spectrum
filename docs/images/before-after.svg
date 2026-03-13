@@ -1,16 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 480" width="880" height="480">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="880" height="520">
   <!-- Background -->
-  <rect width="880" height="480" fill="#111" rx="8" />
+  <rect width="880" height="520" fill="#111" rx="8" />
 
   <!-- Title -->
   <text x="440" y="32" font-family="'IBM Plex Mono', 'SF Mono', monospace" font-size="13" fill="#888" text-anchor="middle" letter-spacing="3">ANTES vs DEPOIS</text>
 
-  <!-- ═══ LEFT: Before ═══ -->
+  <!-- LEFT: Before -->
   <text x="215" y="62" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#ef4444" text-anchor="middle" letter-spacing="1">SEM SPECTRUM</text>
 
-  <rect x="30" y="74" width="370" height="370" rx="4" fill="#0d0d0d" stroke="#333" stroke-width="1" />
+  <rect x="30" y="74" width="370" height="400" rx="4" fill="#0d0d0d" stroke="#333" stroke-width="1" />
 
-  <!-- Scattered files -->
   <g font-family="'IBM Plex Mono', monospace">
     <!-- projeto-a -->
     <text x="50" y="100" font-size="10" fill="#888">~/projeto-a/</text>
@@ -56,96 +55,102 @@
     <text x="255" y="108" font-size="8" fill="#666">estatico, nao pesquisavel</text>
 
     <text x="240" y="128" font-size="9" fill="#ef4444">x</text>
-    <text x="255" y="128" font-size="8" fill="#666">enche a janela de contexto</text>
+    <text x="255" y="128" font-size="8" fill="#666">enche janela de contexto</text>
 
     <text x="240" y="148" font-size="9" fill="#ef4444">x</text>
-    <text x="255" y="148" font-size="8" fill="#666">cada projeto = arquivos novos</text>
+    <text x="255" y="148" font-size="8" fill="#666">cada projeto = novos .md</text>
 
     <text x="240" y="168" font-size="9" fill="#ef4444">x</text>
     <text x="255" y="168" font-size="8" fill="#666">ctrl+F rezando pra achar</text>
 
     <text x="240" y="188" font-size="9" fill="#ef4444">x</text>
-    <text x="255" y="188" font-size="8" fill="#666">nao compartilha entre agentes</text>
+    <text x="255" y="188" font-size="8" fill="#666">nao compartilha entre IAs</text>
 
     <text x="240" y="208" font-size="9" fill="#ef4444">x</text>
     <text x="255" y="208" font-size="8" fill="#666">skills carregadas sempre</text>
   </g>
 
-  <!-- ═══ Divider ═══ -->
-  <line x1="440" y1="55" x2="440" y2="450" stroke="#333" stroke-width="1" />
+  <!-- Divider -->
+  <line x1="440" y1="55" x2="440" y2="490" stroke="#333" stroke-width="1" />
 
-  <!-- ═══ RIGHT: After ═══ -->
+  <!-- RIGHT: After -->
   <text x="660" y="62" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#4ade80" text-anchor="middle" letter-spacing="1">COM SPECTRUM</text>
 
-  <rect x="480" y="74" width="370" height="370" rx="4" fill="#0d0d0d" stroke="#333" stroke-width="1" />
+  <rect x="480" y="74" width="370" height="400" rx="4" fill="#0d0d0d" stroke="#333" stroke-width="1" />
 
   <g font-family="'IBM Plex Mono', monospace">
     <!-- Central DB -->
-    <rect x="530" y="92" width="270" height="50" rx="4" fill="#1a1a1a" stroke="#7c3aed" stroke-width="1.5" />
+    <rect x="510" y="92" width="310" height="46" rx="4" fill="#1a1a1a" stroke="#7c3aed" stroke-width="1.5" />
     <text x="665" y="112" font-size="13" fill="#a78bfa" text-anchor="middle">~/.spectrum/spectrum.db</text>
-    <text x="665" y="130" font-size="9" fill="#555" text-anchor="middle">SQLite WAL + embeddings 384D</text>
+    <text x="665" y="128" font-size="9" fill="#555" text-anchor="middle">SQLite WAL + embeddings 384D</text>
 
     <!-- Scopes -->
-    <text x="510" y="168" font-size="9" fill="#7c3aed">scopes organizados:</text>
+    <text x="510" y="162" font-size="9" fill="#7c3aed">scopes organizados:</text>
 
-    <rect x="510" y="178" width="150" height="22" rx="2" fill="#1a1a1a" stroke="#4ade80" stroke-width="0.5" />
-    <text x="520" y="193" font-size="9" fill="#4ade80">user/</text>
-    <text x="566" y="193" font-size="8" fill="#666">preferencias</text>
+    <rect x="510" y="172" width="200" height="22" rx="2" fill="#1a1a1a" stroke="#4ade80" stroke-width="0.5" />
+    <text x="520" y="187" font-size="9" fill="#4ade80">user/</text>
+    <text x="570" y="187" font-size="8" fill="#666">preferencias pessoais</text>
 
-    <rect x="510" y="204" width="150" height="22" rx="2" fill="#1a1a1a" stroke="#4ade80" stroke-width="0.5" />
-    <text x="520" y="219" font-size="9" fill="#4ade80">project:app/</text>
-    <text x="604" y="219" font-size="8" fill="#666">stack, decisoes</text>
+    <rect x="510" y="198" width="200" height="22" rx="2" fill="#1a1a1a" stroke="#4ade80" stroke-width="0.5" />
+    <text x="520" y="213" font-size="9" fill="#4ade80">project:app/</text>
+    <text x="610" y="213" font-size="8" fill="#666">stack, decisoes</text>
 
-    <rect x="510" y="230" width="150" height="22" rx="2" fill="#1a1a1a" stroke="#4ade80" stroke-width="0.5" />
-    <text x="520" y="245" font-size="9" fill="#4ade80">session/</text>
-    <text x="580" y="245" font-size="8" fill="#666">onde parei</text>
+    <rect x="510" y="224" width="200" height="22" rx="2" fill="#1a1a1a" stroke="#4ade80" stroke-width="0.5" />
+    <text x="520" y="239" font-size="9" fill="#4ade80">session/</text>
+    <text x="584" y="239" font-size="8" fill="#666">onde parei</text>
 
-    <rect x="510" y="256" width="150" height="22" rx="2" fill="#1a1a1a" stroke="#4ade80" stroke-width="0.5" />
-    <text x="520" y="271" font-size="9" fill="#4ade80">technical/</text>
-    <text x="590" y="271" font-size="8" fill="#666">reutilizavel</text>
+    <rect x="510" y="250" width="200" height="22" rx="2" fill="#1a1a1a" stroke="#4ade80" stroke-width="0.5" />
+    <text x="520" y="265" font-size="9" fill="#4ade80">technical/</text>
+    <text x="596" y="265" font-size="8" fill="#666">reutilizavel</text>
 
-    <rect x="510" y="282" width="150" height="22" rx="2" fill="#1a1a1a" stroke="#4ade80" stroke-width="0.5" />
-    <text x="520" y="297" font-size="9" fill="#4ade80">guardrails/</text>
-    <text x="598" y="297" font-size="8" fill="#666">limites</text>
+    <rect x="510" y="276" width="200" height="22" rx="2" fill="#1a1a1a" stroke="#4ade80" stroke-width="0.5" />
+    <text x="520" y="291" font-size="9" fill="#4ade80">guardrails/</text>
+    <text x="604" y="291" font-size="8" fill="#666">limites</text>
 
-    <!-- Benefits -->
-    <text x="690" y="193" font-size="9" fill="#4ade80">+</text>
-    <text x="702" y="193" font-size="8" fill="#888">pesquisavel por significado</text>
+    <!-- Benefits (right column, aligned) -->
+    <text x="730" y="170" font-size="9" fill="#4ade80">+</text>
+    <text x="742" y="170" font-size="8" fill="#888">busca semantica</text>
 
-    <text x="690" y="213" font-size="9" fill="#4ade80">+</text>
-    <text x="702" y="213" font-size="8" fill="#888">sob demanda (nao enche contexto)</text>
+    <text x="730" y="186" font-size="9" fill="#4ade80">+</text>
+    <text x="742" y="186" font-size="8" fill="#888">sob demanda</text>
 
-    <text x="690" y="233" font-size="9" fill="#4ade80">+</text>
-    <text x="702" y="233" font-size="8" fill="#888">compartilhado entre agentes</text>
+    <text x="730" y="202" font-size="9" fill="#4ade80">+</text>
+    <text x="742" y="202" font-size="8" fill="#888">multi-agente</text>
 
-    <text x="690" y="253" font-size="9" fill="#4ade80">+</text>
-    <text x="702" y="253" font-size="8" fill="#888">um lugar, todos os projetos</text>
+    <text x="730" y="218" font-size="9" fill="#4ade80">+</text>
+    <text x="742" y="218" font-size="8" fill="#888">todos projetos</text>
 
-    <text x="690" y="273" font-size="9" fill="#4ade80">+</text>
-    <text x="702" y="273" font-size="8" fill="#888">dinamico, atualiza em tempo real</text>
+    <text x="730" y="234" font-size="9" fill="#4ade80">+</text>
+    <text x="742" y="234" font-size="8" fill="#888">dinamico</text>
 
-    <text x="690" y="293" font-size="9" fill="#4ade80">+</text>
-    <text x="702" y="293" font-size="8" fill="#888">100% local, seus dados</text>
+    <text x="730" y="250" font-size="9" fill="#4ade80">+</text>
+    <text x="742" y="250" font-size="8" fill="#888">100% local</text>
+
+    <!-- Separator -->
+    <line x1="510" y1="314" x2="810" y2="314" stroke="#333" stroke-width="0.5" />
 
     <!-- Agents sharing -->
-    <text x="580" y="334" font-size="9" fill="#7c3aed">3 agentes, 1 memoria:</text>
+    <text x="510" y="336" font-size="9" fill="#7c3aed">3 agentes, 1 memoria:</text>
 
-    <rect x="510" y="344" width="90" height="28" rx="3" fill="#1a1a1a" stroke="#444" stroke-width="0.5" />
-    <text x="555" y="362" font-size="9" fill="#ccc" text-anchor="middle">Claude</text>
+    <rect x="510" y="348" width="90" height="28" rx="3" fill="#1a1a1a" stroke="#444" stroke-width="0.5" />
+    <text x="555" y="366" font-size="9" fill="#ccc" text-anchor="middle">Claude</text>
 
-    <rect x="610" y="344" width="90" height="28" rx="3" fill="#1a1a1a" stroke="#444" stroke-width="0.5" />
-    <text x="655" y="362" font-size="9" fill="#ccc" text-anchor="middle">Gemini</text>
+    <rect x="610" y="348" width="90" height="28" rx="3" fill="#1a1a1a" stroke="#444" stroke-width="0.5" />
+    <text x="655" y="366" font-size="9" fill="#ccc" text-anchor="middle">Gemini</text>
 
-    <rect x="710" y="344" width="90" height="28" rx="3" fill="#1a1a1a" stroke="#444" stroke-width="0.5" />
-    <text x="755" y="362" font-size="9" fill="#ccc" text-anchor="middle">Codex</text>
+    <rect x="710" y="348" width="90" height="28" rx="3" fill="#1a1a1a" stroke="#444" stroke-width="0.5" />
+    <text x="755" y="366" font-size="9" fill="#ccc" text-anchor="middle">Codex</text>
 
-    <!-- Connecting lines to DB -->
-    <line x1="555" y1="344" x2="600" y2="142" stroke="#7c3aed" stroke-width="0.5" opacity="0.4" />
-    <line x1="655" y1="344" x2="665" y2="142" stroke="#7c3aed" stroke-width="0.5" opacity="0.4" />
-    <line x1="755" y1="344" x2="730" y2="142" stroke="#7c3aed" stroke-width="0.5" opacity="0.4" />
+    <!-- Arrows from agents UP to DB (below scopes, no overlap) -->
+    <line x1="555" y1="348" x2="580" y2="138" stroke="#7c3aed" stroke-width="0.7" opacity="0.3" stroke-dasharray="3,2" />
+    <line x1="655" y1="348" x2="665" y2="138" stroke="#7c3aed" stroke-width="0.7" opacity="0.3" stroke-dasharray="3,2" />
+    <line x1="755" y1="348" x2="750" y2="138" stroke="#7c3aed" stroke-width="0.7" opacity="0.3" stroke-dasharray="3,2" />
+
+    <!-- MCP label -->
+    <text x="665" y="410" font-size="8" fill="#555" text-anchor="middle">conectados via MCP (protocolo aberto)</text>
   </g>
 
-  <!-- ═══ Bottom comparison ═══ -->
-  <text x="215" y="465" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#ef4444" text-anchor="middle">10+ arquivos, 0 busca semantica</text>
-  <text x="660" y="465" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#4ade80" text-anchor="middle">1 banco, busca por significado, todos agentes</text>
+  <!-- Bottom comparison -->
+  <text x="215" y="505" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#ef4444" text-anchor="middle">10+ arquivos, 0 busca semantica</text>
+  <text x="660" y="505" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#4ade80" text-anchor="middle">1 banco, busca por significado, todos agentes</text>
 </svg>
