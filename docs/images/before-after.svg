@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 500" width="860" height="500">
-  <rect width="860" height="500" fill="#0f1117" rx="8" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 540" width="860" height="540">
+  <rect width="860" height="540" fill="#0f1117" rx="8" />
 
   <!-- Titulo -->
   <text x="430" y="30" font-family="monospace" font-size="12" fill="#888" text-anchor="middle" letter-spacing="2">ANTES vs DEPOIS</text>
@@ -49,28 +49,28 @@
     <rect x="60" y="338" width="200" height="22" rx="3" fill="#0f1117" stroke="#444" stroke-width="0.5" />
     <text x="70" y="353" font-size="9" fill="#ef4444">anotações-random.md</text>
 
-    <!-- Problemas -->
-    <text x="280" y="110" font-size="9" fill="#ef4444">x</text>
-    <text x="293" y="110" font-size="8" fill="#666">não pesquisável</text>
+    <!-- Problemas (movidos pra baixo dos arquivos, dentro da caixa) -->
+    <text x="50" y="382" font-size="8" fill="#ef4444">x</text>
+    <text x="62" y="382" font-size="7" fill="#666">não pesquisável por significado</text>
 
-    <text x="280" y="130" font-size="9" fill="#ef4444">x</text>
-    <text x="293" y="130" font-size="8" fill="#666">enche janela de contexto</text>
+    <text x="50" y="396" font-size="8" fill="#ef4444">x</text>
+    <text x="62" y="396" font-size="7" fill="#666">entra inteiro na janela de contexto</text>
 
-    <text x="280" y="150" font-size="9" fill="#ef4444">x</text>
-    <text x="293" y="150" font-size="8" fill="#666">cada projeto = novos .md</text>
+    <text x="50" y="410" font-size="8" fill="#ef4444">x</text>
+    <text x="62" y="410" font-size="7" fill="#666">não compartilha entre agentes</text>
 
-    <text x="280" y="170" font-size="9" fill="#ef4444">x</text>
-    <text x="293" y="170" font-size="8" fill="#666">ctrl+F rezando pra achar</text>
+    <text x="50" y="424" font-size="8" fill="#ef4444">x</text>
+    <text x="62" y="424" font-size="7" fill="#666">estático e desatualizado</text>
 
-    <text x="280" y="190" font-size="9" fill="#ef4444">x</text>
-    <text x="293" y="190" font-size="8" fill="#666">não compartilha entre IAs</text>
+    <text x="230" y="382" font-size="8" fill="#ef4444">x</text>
+    <text x="242" y="382" font-size="7" fill="#666">cada projeto = novos .md</text>
 
-    <text x="280" y="210" font-size="9" fill="#ef4444">x</text>
-    <text x="293" y="210" font-size="8" fill="#666">estático, desatualizado</text>
+    <text x="230" y="396" font-size="8" fill="#ef4444">x</text>
+    <text x="242" y="396" font-size="7" fill="#666">ctrl+F rezando pra achar</text>
   </g>
 
   <!-- Divisor -->
-  <line x1="430" y1="52" x2="430" y2="466" stroke="#333" stroke-width="1" />
+  <line x1="430" y1="52" x2="430" y2="506" stroke="#333" stroke-width="1" />
 
   <!-- DIREITA: Com Spectrum -->
   <text x="645" y="58" font-family="monospace" font-size="11" fill="#4ade80" text-anchor="middle" letter-spacing="1">COM SPECTRUM</text>
@@ -136,16 +136,17 @@
     <rect x="692" y="312" width="96" height="28" rx="3" fill="#0f1117" stroke="#444" stroke-width="0.5" />
     <text x="740" y="330" font-size="9" fill="#ccc" text-anchor="middle">Codex</text>
 
-    <!-- Linhas agentes → banco -->
-    <line x1="528" y1="312" x2="560" y2="130" stroke="#7c3aed" stroke-width="0.7" opacity="0.3" stroke-dasharray="3,2" />
-    <line x1="634" y1="312" x2="640" y2="130" stroke="#7c3aed" stroke-width="0.7" opacity="0.3" stroke-dasharray="3,2" />
-    <line x1="740" y1="312" x2="720" y2="130" stroke="#7c3aed" stroke-width="0.7" opacity="0.3" stroke-dasharray="3,2" />
-
     <!-- MCP -->
-    <text x="640" y="370" font-size="8" fill="#555" text-anchor="middle">conectados via MCP (protocolo aberto)</text>
+    <text x="640" y="362" font-size="8" fill="#555" text-anchor="middle">conectados via MCP (protocolo aberto)</text>
+
+    <!-- Spectrum Cloud callout -->
+    <line x1="480" y1="378" x2="790" y2="378" stroke="#7c3aed" stroke-width="0.5" stroke-dasharray="4,3" />
+    <text x="640" y="398" font-size="9" fill="#a78bfa" text-anchor="middle">Para produção: Spectrum Cloud</text>
+    <text x="640" y="412" font-size="8" fill="#666" text-anchor="middle">API REST · busca híbrida · embeddings 1024D · multi-tenant</text>
+    <text x="640" y="426" font-size="8" fill="#555" text-anchor="middle">mesma API, escalável para times e aplicações reais</text>
   </g>
 
   <!-- Comparação final -->
-  <text x="210" y="484" font-family="monospace" font-size="9" fill="#ef4444" text-anchor="middle">10+ arquivos, 0 busca semântica</text>
-  <text x="645" y="484" font-family="monospace" font-size="9" fill="#4ade80" text-anchor="middle">1 banco, busca por significado, todos agentes</text>
+  <text x="210" y="524" font-family="monospace" font-size="9" fill="#ef4444" text-anchor="middle">10+ arquivos, 0 busca semântica</text>
+  <text x="645" y="524" font-family="monospace" font-size="9" fill="#4ade80" text-anchor="middle">1 banco, busca por significado, todos agentes</text>
 </svg>
