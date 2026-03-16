@@ -7,8 +7,8 @@
 Give your AI agents memory that survives between sessions.\
 Local-first. SQLite. Embeddings. Zero cloud dependency.
 
-[![CI](https://github.com/Natiwo/spectrum/actions/workflows/ci.yml/badge.svg)](https://github.com/Natiwo/spectrum/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/@natiwo/spectrum)](https://www.npmjs.com/package/@natiwo/spectrum)
+[![npm](https://img.shields.io/npm/v/@natiwo/spectrum-memory)](https://www.npmjs.com/package/@natiwo/spectrum-memory)
+[![PyPI](https://img.shields.io/pypi/v/spectrum-memory)](https://pypi.org/project/spectrum-memory/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ```
@@ -26,24 +26,26 @@ Every AI session starts from zero. Your agent does not know what happened yester
 
 **Spectrum** gives AI persistent, searchable, semantic memory. It runs on your machine, stores everything in SQLite, and finds relevant memories using embeddings (384-dimensional vectors, all-MiniLM-L6-v2). No API keys. No cloud. No latency.
 
-## Packages
+## Install
 
-| Package | Description | npm |
-|---------|-------------|-----|
-| [`@natiwo/spectrum`](packages/core) | Core library (storage, embeddings, search) | [![npm](https://img.shields.io/npm/v/@natiwo/spectrum)](https://www.npmjs.com/package/@natiwo/spectrum) |
-| [`@natiwo/spectrum-cli`](packages/cli) | CLI tool (`spm`) | [![npm](https://img.shields.io/npm/v/@natiwo/spectrum-cli)](https://www.npmjs.com/package/@natiwo/spectrum-cli) |
-| [`@natiwo/spectrum-mcp`](packages/mcp) | MCP server for Claude, Gemini, Codex | [![npm](https://img.shields.io/npm/v/@natiwo/spectrum-mcp)](https://www.npmjs.com/package/@natiwo/spectrum-mcp) |
+**Node:**
+```bash
+npm install -g @natiwo/spectrum-memory
+```
+
+**Python:**
+```bash
+pip install spectrum-memory
+```
+
+One package. Includes the core library, CLI (`spm`), and MCP server (`spectrum-mcp`). Both read and write the same SQLite database (`~/.spectrum/spectrum.db`).
 
 ## Quick Start
 
 ### As a Library
 
-```bash
-npm install @natiwo/spectrum
-```
-
 ```typescript
-import { Spectrum } from "@natiwo/spectrum"
+import { Spectrum } from "@natiwo/spectrum-memory"
 
 const memory = new Spectrum()
 
@@ -69,8 +71,6 @@ const similar = await memory.searchSemantic("which database did we pick and why?
 ### As a CLI
 
 ```bash
-npm install -g @natiwo/spectrum-cli
-
 # Save
 spm save project:my-app/db-decision "PostgreSQL for ACID compliance"
 
@@ -86,47 +86,48 @@ spm scopes
 
 ### As an MCP Server (Claude Code, Gemini CLI, Codex)
 
-```bash
-npm install -g @natiwo/spectrum-mcp
-
-# Add to your MCP config
-spectrum-mcp
-```
-
 Claude Code (`~/.claude.json`):
 ```json
 {
   "mcpServers": {
     "spectrum": {
-      "command": "spectrum-mcp",
-      "args": []
+      "command": "spectrum-mcp"
     }
   }
 }
 ```
 
-Now your AI can save and recall memories across sessions:
+Gemini CLI (`~/.gemini/settings.json`):
+```json
+{
+  "mcpServers": {
+    "spectrum": {
+      "command": "spectrum-mcp"
+    }
+  }
+}
 ```
-You: "Remember that we use Tailwind 4 with the Catalyst preset in this project"
-AI: [saves to spectrum]
 
---- next day, new session ---
-
-You: "What CSS framework do we use?"
-AI: [searches spectrum] "You use Tailwind 4 with the Catalyst preset."
+Codex:
+```toml
+[mcp_servers.spectrum]
+command = "spectrum-mcp"
 ```
+
+Three agents, one memory. Claude saves, Gemini reads, Codex uses. Nobody forgets.
 
 ## How It Works
 
 ### Scopes
 
-Scopes are namespaces that organize memories. Use them to separate concerns:
+Scopes are namespaces that organize memories:
 
 ```
-user:preferences     -- personal settings
-project:my-app       -- project-specific context
-session:2026-03-13   -- session logs
-team:backend         -- shared team knowledge
+user/                    -- personal settings, preferences
+project:my-app/          -- project-specific context
+session/                 -- session logs and summaries
+technical/               -- reusable technical knowledge
+active/                  -- current work in progress
 ```
 
 ### Embeddings
@@ -154,7 +155,7 @@ All data lives in a single SQLite file (`~/.spectrum/spectrum.db`). WAL mode for
 **Want something else?** The storage layer is pluggable. Implement the `StorageProvider` interface and use whatever you want:
 
 ```typescript
-import { Spectrum } from "@natiwo/spectrum"
+import { Spectrum } from "@natiwo/spectrum-memory"
 import { PgVectorStorage } from "./my-pgvector-adapter"
 
 const memory = new Spectrum({
@@ -162,19 +163,12 @@ const memory = new Spectrum({
 })
 ```
 
-Community adapters we would love to see:
-- pgvector (PostgreSQL)
-- Cloudflare Vectorize + D1
-- Pinecone / Qdrant / Weaviate
-- DynamoDB + OpenSearch
-- libSQL (Turso)
-
 ## API Reference
 
 ### `Spectrum`
 
 ```typescript
-import { Spectrum } from "@natiwo/spectrum"
+import { Spectrum } from "@natiwo/spectrum-memory"
 
 const memory = new Spectrum({
   dbPath?: string,             // default: ~/.spectrum/spectrum.db
@@ -249,100 +243,61 @@ interface EmbeddingProvider {
 ## Architecture
 
 ```
-@natiwo/spectrum (core)
+@natiwo/spectrum-memory
 ├── Spectrum          Main class (orchestrator)
 ├── SqliteStorage     SQLite + WAL + BLOB embeddings
 ├── LocalEmbedding    all-MiniLM-L6-v2, 384D, ONNX local
 ├── NoopEmbedding     Keyword-only mode (no model download)
+├── CLI (spm)         Terminal interface
+├── MCP Server        Model Context Protocol for AI tools
 └── Types             Memory, SearchResult, providers
-
-@natiwo/spectrum-cli
-└── spm               CLI interface (save, get, search, list, scopes, stats)
-
-@natiwo/spectrum-mcp
-└── MCP Server        Model Context Protocol for AI tools
-```
-
-Dependency graph:
-```
-spectrum-cli ──depends──> spectrum (core)
-spectrum-mcp ──depends──> spectrum (core)
 ```
 
 ## Guardrails
 
 Spectrum is a memory system. Memory without guardrails is a liability. Here is what you should think about when giving AI persistent memory:
 
-**Scope isolation.** Do not dump everything in one scope. Separate `user:*`, `project:*`, `session:*`. When an AI searches for "database config", it should not accidentally pull your personal notes.
+**Scope isolation.** Do not dump everything in one scope. Separate `user/`, `project:*/`, `session/`. When an AI searches for "database config", it should not accidentally pull your personal notes.
 
 **Sensitive data.** Spectrum stores plain text in SQLite. Do not save secrets, tokens, passwords, or PII without encryption. If you need to store sensitive data, encrypt before saving or use a dedicated secrets manager.
 
 **Memory hygiene.** Old memories can mislead. If your architecture changed from MongoDB to PostgreSQL, the old "we use MongoDB" memory will confuse your AI. Update or delete stale entries.
 
-**Least privilege.** The MCP server exposes read and write operations. If you are running Spectrum in a shared environment, consider who can access the database file and the MCP endpoint.
-
 **Your data, your machine.** Spectrum is local-first by design. Your memories never leave your machine unless you explicitly configure a remote storage provider.
 
-## Use Cases
+## Spectrum Cloud
 
-| Use Case | How |
-|----------|-----|
-| **AI remembers preferences** | `scope: "user"` -- coding style, tools, conventions |
-| **Project context** | `scope: "project:name"` -- architecture, decisions, patterns |
-| **Session continuity** | `scope: "session"` -- what happened, what was decided |
-| **Team knowledge** | `scope: "team:backend"` -- shared standards, runbooks |
-| **Skills and procedures** | `scope: "skills"` -- reusable instructions, how-tos |
-| **Debug history** | `scope: "debug"` -- what failed, what fixed it, root causes |
+The open source version runs 100% local with SQLite and 384D embeddings. For production applications that need to scale:
+
+**Spectrum Cloud** offers:
+- **REST API** with hybrid search (70% semantic + 30% keyword)
+- **Embeddings 1024D** (`bge-large-en-v1.5`)
+- **Multi-tenant** isolation
+- Same API, scalable for teams and real applications
 
 ## Contributing
 
 Contributions are welcome. Issues, PRs, new storage adapters, embedding providers, documentation.
 
 ```bash
-# Clone and install
 git clone https://github.com/Natiwo/spectrum.git
 cd spectrum
 pnpm install
-
-# Build
 pnpm build
-
-# Run tests
 pnpm test
-
-# Lint + typecheck
-pnpm check
-
-# Run all quality gates
-pnpm lint && pnpm typecheck && pnpm build && pnpm test
 ```
 
-### Quality Gate
+## Python
 
-| Check | Command |
-|-------|---------|
-| Format | `pnpm format` |
-| Lint | `pnpm lint` |
-| Type Check | `pnpm typecheck` |
-| Test | `pnpm test` |
-| Dead Code | `pnpm knip` |
-| Deps Audit | `pnpm audit:deps` |
-| Licenses | `pnpm audit:licenses` |
-| Secrets | `pnpm audit:secrets` |
-
-## Enterprise
-
-Spectrum is a professional commercial project. The open source version (MIT) gives you everything you need for personal and team use.
-
-If you need multi-tenant isolation, managed infrastructure, custom embedding models, SLA, or integration support for your organization, reach out:
-
-**[Claudiomar Estevam](https://www.linkedin.com/in/claudioeestevam/)** -- Natiwo Sistemas
+The Python package (`spectrum-memory` on PyPI) shares the same database and API. Install with `pip install spectrum-memory`. Source: [github.com/Natiwo/spectrum-memory](https://github.com/Natiwo/spectrum-memory).
 
 ## About
 
 Built by [Natiwo](https://natiwo.com.br). Designed with neurodivergent minds in mind, built for everyone.
 
-Spectrum was born from a real need: after thousands of AI sessions, starting from zero every time was not an option anymore. What began as a personal tool evolved into a production system and now an open source project.
+Spectrum was born from a real need: after thousands of AI sessions, starting from zero every time was not an option anymore.
+
+**[Claudiomar Estevam](https://www.linkedin.com/in/claudioeestevam/)** -- Natiwo Sistemas
 
 ## License
 
