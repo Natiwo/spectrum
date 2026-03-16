@@ -9,6 +9,7 @@ Local-first. SQLite. Embeddings. Zero cloud dependency.
 
 [![npm](https://img.shields.io/npm/v/@natiwo/spectrum-memory)](https://www.npmjs.com/package/@natiwo/spectrum-memory)
 [![PyPI](https://img.shields.io/pypi/v/spectrum-memory)](https://pypi.org/project/spectrum-memory/)
+[![MCP Compatible](https://img.shields.io/badge/MCP-Compatible-7c3aed)](https://modelcontextprotocol.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ```
@@ -25,6 +26,16 @@ Spectrum fixes that.
 Every AI session starts from zero. Your agent does not know what happened yesterday, what you prefer, or what it already solved. Context windows are volatile. Chat history is not memory.
 
 **Spectrum** gives AI persistent, searchable, semantic memory. It runs on your machine, stores everything in SQLite, and finds relevant memories using embeddings (384-dimensional vectors, all-MiniLM-L6-v2). No API keys. No cloud. No latency.
+
+## `.md` files vs Spectrum
+
+| | `.md` files | Spectrum |
+|---|---|---|
+| **Search** | ctrl+F exact text | by meaning (semantic) |
+| **Token usage** | entire file in context | only what was searched |
+| **Multi-agent** | each AI reads its own .md | all share the same database |
+| **Multi-project** | copy .md between folders | scopes organized by project |
+| **Updates** | manual, often forgotten | automatic upsert by scope/key |
 
 ## Install
 
@@ -144,7 +155,7 @@ When you search semantically, Spectrum converts your query to a vector and finds
 - "relational DB choice" matches "PostgreSQL for ACID" (related concepts)
 - Typos, synonyms, and paraphrasing all work naturally
 
-The model runs **locally via ONNX**. No API calls. No internet required.
+The model runs **locally via ONNX**. No API calls. No internet required. No Python/PyTorch dependency for the Node.js version — ONNX runtime handles inference out-of-the-box.
 
 ### SQLite
 
