@@ -1,13 +1,13 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js"
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
-import { Spectrum } from "@natiwo/spectrum"
 import { z } from "zod"
+import { Spectrum } from "./spectrum.js"
 
 const memory = new Spectrum()
 
 const server = new McpServer({
-	name: "spectrum",
-	version: "0.1.0",
+	name: "spectrum-memory",
+	version: "0.2.0",
 })
 
 server.tool(

@@ -48,45 +48,28 @@ importers:
         specifier: ^4.0.0
         version: 4.1.0(@types/node@25.5.0)(vite@8.0.0(@types/node@25.5.0)(jiti@2.6.1)(yaml@2.8.2))
 
-  packages/cli:
-    dependencies:
-      '@natiwo/spectrum':
-        specifier: workspace:*
-        version: link:../core
-    devDependencies:
-      '@types/node':
-        specifier: ^25.5.0
-        version: 25.5.0
-
-  packages/core:
-    dependencies:
-      better-sqlite3:
-        specifier: ^11.0.0
-        version: 11.10.0
-    devDependencies:
-      '@types/better-sqlite3':
-        specifier: ^7.6.0
-        version: 7.6.13
-    optionalDependencies:
-      '@huggingface/transformers':
-        specifier: ^3.0.0
-        version: 3.8.1
-
-  packages/mcp:
+  packages/spectrum-memory:
     dependencies:
       '@modelcontextprotocol/sdk':
         specifier: ^1.12.0
         version: 1.27.1(zod@3.25.76)
-      '@natiwo/spectrum':
-        specifier: workspace:*
-        version: link:../core
+      better-sqlite3:
+        specifier: ^11.0.0
+        version: 11.10.0
       zod:
         specifier: ^3.24.0
         version: 3.25.76
     devDependencies:
+      '@types/better-sqlite3':
+        specifier: ^7.6.0
+        version: 7.6.13
       '@types/node':
         specifier: ^25.5.0
         version: 25.5.0
+    optionalDependencies:
+      '@huggingface/transformers':
+        specifier: ^3.0.0
+        version: 3.8.1
 
 packages:
 

@@ -1,4 +1,4 @@
-import { Spectrum } from "@natiwo/spectrum"
+import { Spectrum } from "./spectrum.js"
 
 const dbPath = process.env.SPECTRUM_DB_PATH || undefined
 const memory = new Spectrum({ semantic: false, dbPath })

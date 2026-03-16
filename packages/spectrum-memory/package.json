@@ -1,7 +1,7 @@
 {
-	"name": "@natiwo/spectrum",
-	"version": "0.1.1",
-	"description": "Semantic memory for AI agents. Local-first, SQLite, embeddings, MCP-ready.",
+	"name": "@natiwo/spectrum-memory",
+	"version": "0.2.0",
+	"description": "Persistent semantic memory for AI agents. Local-first, SQLite, embeddings, MCP-ready.",
 	"license": "MIT",
 	"type": "module",
 	"exports": {
@@ -14,6 +14,10 @@
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",
+	"bin": {
+		"spm": "./dist/cli.js",
+		"spectrum-mcp": "./dist/server.js"
+	},
 	"files": ["dist", "README.md", "LICENSE"],
 	"sideEffects": false,
 	"keywords": [
@@ -28,12 +32,13 @@
 		"claude",
 		"gemini",
 		"codex",
-		"neurodiversity"
+		"neurodiversity",
+		"spectrum"
 	],
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/Natiwo/spectrum",
-		"directory": "packages/core"
+		"directory": "packages/spectrum-memory"
 	},
 	"publishConfig": { "access": "public" },
 	"scripts": {
@@ -44,12 +49,15 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"better-sqlite3": "^11.0.0"
+		"@modelcontextprotocol/sdk": "^1.12.0",
+		"better-sqlite3": "^11.0.0",
+		"zod": "^3.24.0"
 	},
 	"optionalDependencies": {
 		"@huggingface/transformers": "^3.0.0"
 	},
 	"devDependencies": {
-		"@types/better-sqlite3": "^7.6.0"
+		"@types/better-sqlite3": "^7.6.0",
+		"@types/node": "^25.5.0"
 	}
 }
