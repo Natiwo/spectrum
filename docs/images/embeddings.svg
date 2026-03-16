@@ -8,7 +8,7 @@
   <rect width="860" height="420" fill="#0f1117" rx="8" />
 
   <!-- Titulo -->
-  <text x="430" y="30" font-family="monospace" font-size="12" fill="#888" text-anchor="middle" letter-spacing="2">BUSCA SEMANTICA</text>
+  <text x="430" y="30" font-family="monospace" font-size="12" fill="#888" text-anchor="middle" letter-spacing="2">BUSCA SEMÂNTICA</text>
 
   <!-- PASSO 1: SALVAR -->
   <text x="40" y="62" font-family="monospace" font-size="10" fill="#7c3aed" letter-spacing="1">1. SALVAR</text>
@@ -20,15 +20,15 @@
 
   <rect x="385" y="72" width="160" height="34" rx="4" fill="#1a1a2e" stroke="#7c3aed" stroke-width="1" />
   <text x="465" y="87" font-family="monospace" font-size="10" fill="#a78bfa" text-anchor="middle">all-MiniLM-L6-v2</text>
-  <text x="465" y="100" font-family="monospace" font-size="8" fill="#555" text-anchor="middle">384 dimensoes</text>
+  <text x="465" y="100" font-family="monospace" font-size="8" fill="#555" text-anchor="middle">384 dimensões</text>
 
   <line x1="545" y1="89" x2="595" y2="89" stroke="#444" stroke-width="1" marker-end="url(#a)" />
 
   <rect x="600" y="72" width="220" height="34" rx="4" fill="#1a1a2e" stroke="#444" stroke-width="1" />
   <text x="710" y="94" font-family="monospace" font-size="10" fill="#888" text-anchor="middle">[0.023, -0.041, ...] x384</text>
 
-  <!-- PASSO 2: ESPACO VETORIAL -->
-  <text x="40" y="136" font-family="monospace" font-size="10" fill="#7c3aed" letter-spacing="1">2. ESPACO VETORIAL</text>
+  <!-- PASSO 2: ESPAÇO VETORIAL -->
+  <text x="40" y="136" font-family="monospace" font-size="10" fill="#7c3aed" letter-spacing="1">2. ESPAÇO VETORIAL</text>
 
   <rect x="40" y="146" width="780" height="140" rx="4" fill="#1a1a2e" stroke="#333" stroke-width="1" />
 
@@ -36,17 +36,17 @@
   <line x1="65" y1="270" x2="790" y2="270" stroke="#333" stroke-width="0.5" />
   <line x1="65" y1="270" x2="65" y2="156" stroke="#333" stroke-width="0.5" />
 
-  <!-- Cluster: memorias de banco (proximas) -->
+  <!-- Cluster: memórias de banco (próximas) -->
   <circle cx="230" cy="200" r="5" fill="#7c3aed" opacity="0.8" />
   <text x="245" y="203" font-family="monospace" font-size="9" fill="#ccc">"Escolhemos PostgreSQL por ACID"</text>
 
   <circle cx="260" cy="225" r="4" fill="#7c3aed" opacity="0.5" />
-  <text x="275" y="228" font-family="monospace" font-size="9" fill="#888">"Banco e relacional"</text>
+  <text x="275" y="228" font-family="monospace" font-size="9" fill="#888">"Banco é relacional"</text>
 
   <circle cx="210" cy="240" r="3" fill="#7c3aed" opacity="0.4" />
-  <text x="110" y="248" font-family="monospace" font-size="9" fill="#888">"SQL ao inves de NoSQL"</text>
+  <text x="110" y="248" font-family="monospace" font-size="9" fill="#888">"SQL ao invés de NoSQL"</text>
 
-  <!-- Memorias distantes -->
+  <!-- Memórias distantes -->
   <circle cx="580" cy="258" r="3" fill="#444" opacity="0.5" />
   <text x="593" y="261" font-family="monospace" font-size="9" fill="#555">"Deploy usa Docker"</text>
 
@@ -86,6 +86,6 @@
   <text x="592" y="344" font-family="monospace" font-size="9" fill="#7c3aed">score: 0.92</text>
   <text x="592" y="360" font-family="monospace" font-size="10" fill="#ccc">"Escolhemos PostgreSQL por ACID"</text>
 
-  <!-- Rodape -->
-  <text x="430" y="404" font-family="monospace" font-size="9" fill="#444" text-anchor="middle">encontra por significado, nao por palavras exatas</text>
+  <!-- Rodapé -->
+  <text x="430" y="404" font-family="monospace" font-size="9" fill="#444" text-anchor="middle">encontra por significado, não por palavras exatas</text>
 </svg>
