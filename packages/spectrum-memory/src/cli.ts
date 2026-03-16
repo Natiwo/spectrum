@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { Spectrum } from "./spectrum.js"
 
 const dbPath = process.env.SPECTRUM_DB_PATH || undefined
